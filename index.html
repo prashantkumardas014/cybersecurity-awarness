@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPulse | Cybersecurity Awareness Survey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="matrix-bg" id="matrixBg"></div>
+    <div class="particles-container" id="particlesContainer"></div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Cyber<span>Pulse</span></h1>
+                <div class="pulse"></div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#survey" class="nav-link">Survey</a></li>
+                    <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                    <li><a href="#resources" class="nav-link">Resources</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Secure Your Digital <span class="highlight">Future</span></h2>
+                <p class="hero-text">Participate in our cybersecurity awareness survey and help us understand student habits to build a safer digital environment.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3 id="participantsCount">0</h3>
+                        <p>Participants</p>
+                    </div>
+                    <div class="stat">
+                        <h3 id="awarenessRate">0%</h3>
+                        <p>Awareness Rate</p>
+                    </div>
+                </div>
+                <button class="cta-btn" id="startSurveyBtn">
+                    <span>Start Survey</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="cyber-shield">
+                    <div class="shield-3d">
+                        <div class="shield-core"></div>
+                        <div class="shield-glow"></div>
+                        <div class="shield-rings">
+                            <div class="ring ring-1"></div>
+                            <div class="ring ring-2"></div>
+                            <div class="ring ring-3"></div>
+                        </div>
+                        <div class="shield-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Section -->
+    <section id="survey" class="survey">
+        <div class="container">
+            <h2 class="section-title">Cybersecurity Awareness <span>Survey</span></h2>
+            <p class="section-subtitle">Help us assess cybersecurity habits among students</p>
+            
+            <div class="survey-container">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">Question 1 of 12</span>
+                </div>
+                
+                <form id="surveyForm" class="survey-form">
+                    <!-- Question 1 -->
+                    <div class="question active" id="q1">
+                        <div class="question-header">
+                            <span class="question-number">01</span>
+                            <h3>How often do you update your passwords?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="monthly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Monthly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="quarterly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Every 3-6 months</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="yearly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Yearly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question" id="q2">
+                        <div class="question-header">
+                            <span class="question-number">02</span>
+                            <h3>Do you use two-factor authentication when available?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="always">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Always</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="sometimes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Sometimes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question" id="q3">
+                        <div class="question-header">
+                            <span class="question-number">03</span>
+                            <h3>How often do you recognize phishing attempts?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="always">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Always</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="sometimes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Sometimes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question" id="q4">
+                        <div class="question-header">
+                            <span class="question-number">04</span>
+                            <h3>Do you use antivirus software regularly?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="always">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Always</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="sometimes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Sometimes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" id="q5">
+                        <div class="question-header">
+                            <span class="question-number">05</span>
+                            <h3>How often do you backup your data?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="weekly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Weekly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="monthly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Monthly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" id="q6">
+                        <div class="question-header">
+                            <span class="question-number">06</span>
+                            <h3>Do you use public WiFi with VPN protection?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="always">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Always</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="sometimes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Sometimes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" id="q7">
+                        <div class="question-header">
+                            <span class="question-number">07</span>
+                            <h3>How aware are you of social engineering attacks?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="very">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Very Aware</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="somewhat">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Somewhat Aware</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="little">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Little Aware</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="not">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Not Aware</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" id="q8">
+                        <div class="question-header">
+                            <span class="question-number">08</span>
+                            <h3>Do you regularly update your software and OS?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="always">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Always</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="sometimes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Sometimes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" id="q9">
+                        <div class="question-header">
+                            <span class="question-number">09</span>
+                            <h3>Do you use a password manager for secure storage?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="always">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Always</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="sometimes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Sometimes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="rarely">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" id="q10">
+                        <div class="question-header">
+                            <span class="question-number">10</span>
+                            <h3>How familiar are you with encryption methods like AES?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q10" value="very">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Very Familiar</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="somewhat">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Somewhat Familiar</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="little">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Little Familiar</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="not">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Not Familiar</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" id="q11">
+                        <div class="question-header">
+                            <span class="question-number">11</span>
+                            <h3>Have you implemented zero-trust architecture in your personal network?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q11" value="yes">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Yes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="planning">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Planning to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="no">
+                                <span class="checkmark"></span>
+                                <span class="option-text">No</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="unaware">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Unaware of it</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" id="q12">
+                        <div class="question-header">
+                            <span class="question-number">12</span>
+                            <h3>Do you conduct regular security audits on your devices?</h3>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q12" value="monthly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Monthly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="quarterly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Quarterly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="yearly">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Yearly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="never">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Never</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="survey-nav">
+                        <button type="button" class="nav-btn" id="prevBtn" disabled>
+                            <i class="fas fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        <button type="button" class="nav-btn" id="nextBtn">
+                            Next
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button type="submit" class="nav-btn submit-btn" id="submitBtn" style="display: none;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Survey
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h2 class="section-title">Survey <span>Dashboard</span></h2>
+            <p class="section-subtitle">Analysis of cybersecurity awareness among participants</p>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Overall Security Score</h3>
+                    <div class="chart-container">
+                        <canvas id="overallScoreChart"></canvas>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 id="avgScore">0%</h4>
+                            <p>Average Score</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="highScore">0%</h4>
+                            <p>Highest Score</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="lowScore">0%</h4>
+                            <p>Lowest Score</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Security Practice Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="practiceDistributionChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Response Analysis</h3>
+                    <div class="chart-container">
+                        <canvas id="responseAnalysisChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Risk Assessment</h3>
+                    <div class="chart-container">
+                        <canvas id="riskAssessmentChart"></canvas>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 id="lowRisk">0%</h4>
+                            <p>Low Risk</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="mediumRisk">0%</h4>
+                            <p>Medium Risk</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="highRisk">0%</h4>
+                            <p>High Risk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2 class="section-title">Cybersecurity <span>Resources</span></h2>
+            <p class="section-subtitle">Educational content to enhance your digital safety</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <img src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/phishing-attack-email-example.png" alt="Phishing" class="resource-image">
+                    <div class="card-icon">
+                        <i class="fas fa-fish"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Phishing</h3>
+                    <p>Phishing is a fraudulent activity where cybercriminals create authentic-looking emails or websites to trick victims into sharing personal or financial information.</p>
+                    <a href="#" class="resource-link">
+                        Explore
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <img src="https://www-s3-live.kent.edu/s3fs-root/s3fs-public/Vishing.png?VersionId=QBkGdULsZKjuMWJ7kwdfhguU5kQG8e2V" alt="Vishing" class="resource-image">
+                    <div class="card-icon">
+                        <i class="fas fa-phone"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Vishing</h3>
+                    <p>Vishing involves fraudsters pretending to call from trusted sources to collect financial information and OTPs.</p>
+                    <a href="#" class="resource-link">
+                        Explore
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/streams/2012/February/120220/62165-6063246.jpg" alt="Malicious Mobile Apps" class="resource-image">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Malicious Mobile Applications</h3>
+                    <p>Infected apps may contain malware that steals data or subscribes to premium services.</p>
+                    <a href="#" class="resource-link">
+                        Explore
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <img src="https://www.shutterstock.com/image-vector/computer-virus-attack-on-laptop-600w-2225723549.jpg" alt="Malware" class="resource-image">
+                    <div class="card-icon">
+                        <i class="fas fa-bug"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Malware</h3>
+                    <p>Malware is malicious code that infects systems. Signs include performance drop, pop-ups, unauthorized emails.</p>
+                    <a href="#" class="resource-link">
+                        Explore
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About This <span>Project</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>This cybersecurity awareness survey aims to assess the digital security habits of students and develop targeted educational content to enhance online safety practices.</p>
+                    <p>By participating in this survey, you're contributing to research that will help create better cybersecurity resources for the student community.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h4 id="stat1">0</h4>
+                            <p>Participants</p>
+                        </div>
+                        <div class="stat">
+                            <h4 id="stat2">0%</h4>
+                            <p>Improved Awareness</p>
+                        </div>
+                        <div class="stat">
+                            <h4 id="stat3">0</h4>
+                            <p>Educational Resources</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="data-visualization">
+                        <canvas id="securityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>CyberPulse</h3>
+                    <p>Protecting digital futures through awareness</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CyberPulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-shield-alt"></i>
+                <div class="success-glow"></div>
+            </div>
+            <h3>Survey Completed!</h3>
+            <p>Thank you for participating in our cybersecurity awareness survey. Your responses will help us develop better educational resources.</p>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <span>Security Score</span>
+                    <h4 id="securityScore">85%</h4>
+                </div>
+            </div>
+            <button class="modal-btn" id="closeModal">
+                <i class="fas fa-times"></i>
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="cyber-loader">
+                <div class="loader-circle"></div>
+                <div class="loader-text">Initializing Security Protocol</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
