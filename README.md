@@ -1,4 +1,4 @@
-# Cybersecurity Awarness
+# Cybersecurity Awarness - CyberPulse
 
 Stay safe online with simple steps.
 Learn to spot scams and strong passwords.
